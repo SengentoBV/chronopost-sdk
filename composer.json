@@ -1,0 +1,23 @@
+{
+  "name": "sengentobv/chronopost-sdk",
+  "description": "sengentobv/chronopost-sdk",
+  "license": "MIT",
+  "require": {
+    "php": "^7.4||^8.0",
+    "ext-dom": "*",
+    "ext-mbstring": "*",
+    "ext-soap": "*",
+    "wsdltophp/packagebase": "~5.0",
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SengentoBV\\ChronopostSdk\\": "./src"
+    }
+  },
+  "require-dev": {
+    "vlucas/phpdotenv": "^5.1",
+    "phpunit/phpunit": "^9.5"
+  }
+}
