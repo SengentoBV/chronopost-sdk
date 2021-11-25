@@ -8,7 +8,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$accountNumber = $_ENV['CHRONO_API_ACCOUNT_NUMBER'] ?? '';
+$accountNumber = intval($_ENV['CHRONO_API_ACCOUNT_NUMBER'] ?? '0');
 $password = $_ENV['CHRONO_API_PASSWORD'] ?? '';
 
 $authentication = new \SengentoBV\ChronopostSdk\ChronoAuthentication($accountNumber, $password);

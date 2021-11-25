@@ -9,6 +9,10 @@ use SengentoBV\ChronopostSdk\Login\DpdBeApiLoginClassMap;
 use SengentoBV\ChronopostSdk\ParcelLifecycle\DpdBeApiParcelLifecycleClassMap;
 use SengentoBV\ChronopostSdk\ParcelShopFinder\DpdBeApiParcelShopFinderClassMap;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoQuickCostServiceClient;
+use SengentoBV\ChronopostSdk\ServiceClients\ChronoRelayPointServiceClient;
+use SengentoBV\ChronopostSdk\ServiceClients\ChronoShippingServiceClient;
+use SengentoBV\ChronopostSdk\ServiceClients\ChronoSlotGeoServiceClient;
+use SengentoBV\ChronopostSdk\ServiceClients\ChronoTrackingServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\DpdBeLoginServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\DpdBeEndOfDayServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\DpdBeParcelLifecycleServiceClient;
@@ -192,7 +196,7 @@ class ChronoApiClient
      */
     public function getSoapServiceClient(string $soapServiceType): AbstractSoapClientBase
     {
-        $soapServiceType = strtolower($soapServiceType);
+        $soapServiceType = strtoupper($soapServiceType);
 
         if (isset($this->soapServiceClients[$soapServiceType])) {
 
@@ -228,6 +232,42 @@ class ChronoApiClient
     public function getQuickCostService(): ChronoQuickCostServiceClient
     {
         return new ChronoQuickCostServiceClient($this);
+    }
+
+    /**
+     * Get a new instance of the shipping service client.
+     * @return ChronoShippingServiceClient
+     */
+    public function getShippingService(): ChronoShippingServiceClient
+    {
+        return new ChronoShippingServiceClient($this);
+    }
+
+    /**
+     * Get a new instance of the slot/geo service client.
+     * @return ChronoSlotGeoServiceClient
+     */
+    public function getSlotGeoService(): ChronoSlotGeoServiceClient
+    {
+        return new ChronoSlotGeoServiceClient($this);
+    }
+
+    /**
+     * Get a new instance of the tracking service client.
+     * @return ChronoTrackingServiceClient
+     */
+    public function getTrackingService(): ChronoTrackingServiceClient
+    {
+        return new ChronoTrackingServiceClient($this);
+    }
+
+    /**
+     * Get a new instance of the relay point service client.
+     * @return ChronoRelayPointServiceClient
+     */
+    public function getRelayPointService(): ChronoRelayPointServiceClient
+    {
+        return new ChronoRelayPointServiceClient($this);
     }
 
     /**
