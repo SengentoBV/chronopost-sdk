@@ -4,11 +4,17 @@ Unofficial Chronopost API PHP SDK
 
 Simple wrapper around the Chronopost SOAP APIs.
 
+Note that this library is mostly untested at the moment, and the 'interface' should not be considered stable at this time.
+
+If you do try this library and run into issues or have suggestions, report them at https://github.com/SengentoBV/chronopost-sdk/issues
+
 ## Installation & Usage
 
 ### Requirements
 
 PHP 7.4 or later.
+
+Check composer.json for a list of all the requirements.
 
 ### Composer
 
