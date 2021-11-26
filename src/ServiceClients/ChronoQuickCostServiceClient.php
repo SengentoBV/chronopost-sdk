@@ -2,10 +2,8 @@
 
 namespace SengentoBV\ChronopostSdk\ServiceClients;
 
-use Exception;
 use SengentoBV\ChronopostSdk\ChronoApiClient;
 use SengentoBV\ChronopostSdk\Exceptions\ChronoException;
-use SengentoBV\ChronopostSdk\Exceptions\ChronoSoapFaultException;
 use SengentoBV\ChronopostSdk\Services\ChronoSoapServiceMap;
 use SengentoBV\ChronopostSdk\Soap\QuickCostService\Services\ChronoApiCalculate;
 use SengentoBV\ChronopostSdk\Soap\QuickCostService\Services\ChronoApiQuick;
@@ -15,8 +13,6 @@ use SengentoBV\ChronopostSdk\Soap\QuickCostService\Structs\ChronoApiQuickCost;
 use SengentoBV\ChronopostSdk\Soap\QuickCostService\Structs\ChronoApiResultCalculateDeliveryTime;
 use SengentoBV\ChronopostSdk\Soap\QuickCostService\Structs\ChronoApiResultCalculateProducts;
 use SengentoBV\ChronopostSdk\Soap\QuickCostService\Structs\ChronoApiResultQuickCostV2;
-use SoapFault;
-use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 class ChronoQuickCostServiceClient extends AbstractChronoServiceClient
 {

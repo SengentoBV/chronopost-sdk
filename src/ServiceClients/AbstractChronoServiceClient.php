@@ -138,7 +138,7 @@ abstract class AbstractChronoServiceClient
 
             $reflectedMethod = new ReflectionMethod($object, 'setSubAccount');
             $isString = $reflectedMethod->getParameters()[0]->getType()->getName() === 'string';
-            $object->setSubAccount(($isString && ($subAccount = $authentication->getSubAccount()) !== null) ? (string)$subAccount : $subAccount);
+            $object->setSubAccount((($subAccount = $authentication->getSubAccount()) !== null) && $isString ? (string)$subAccount : $subAccount);
         }
 
         if (method_exists($object, 'getHeaderValue') && method_exists($object, 'setHeaderValue')) {

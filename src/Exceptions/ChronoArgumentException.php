@@ -3,7 +3,6 @@
 namespace SengentoBV\ChronopostSdk\Exceptions;
 
 use Throwable;
-use UnexpectedValueException;
 
 class ChronoArgumentException extends ChronoException
 {

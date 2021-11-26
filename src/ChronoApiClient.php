@@ -2,26 +2,13 @@
 
 namespace SengentoBV\ChronopostSdk;
 
-use SengentoBV\ChronopostSdk\EndOfDay\DpdBeApiEndOfDayClassMap;
 use SengentoBV\ChronopostSdk\Exceptions\ChronoException;
-use SengentoBV\ChronopostSdk\Exceptions\DpdBeException;
-use SengentoBV\ChronopostSdk\Login\DpdBeApiLoginClassMap;
-use SengentoBV\ChronopostSdk\ParcelLifecycle\DpdBeApiParcelLifecycleClassMap;
-use SengentoBV\ChronopostSdk\ParcelShopFinder\DpdBeApiParcelShopFinderClassMap;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoQuickCostServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoRelayPointServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoShippingServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoSlotGeoServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoTrackingServiceClient;
-use SengentoBV\ChronopostSdk\ServiceClients\DpdBeLoginServiceClient;
-use SengentoBV\ChronopostSdk\ServiceClients\DpdBeEndOfDayServiceClient;
-use SengentoBV\ChronopostSdk\ServiceClients\DpdBeParcelLifecycleServiceClient;
-use SengentoBV\ChronopostSdk\ServiceClients\DpdBeParcelShopFinderServiceClient;
-use SengentoBV\ChronopostSdk\ServiceClients\DpdBeShipmentServiceClient;
 use SengentoBV\ChronopostSdk\Services\ChronoSoapServiceMap;
-use SengentoBV\ChronopostSdk\Services\DpdBeSoapServiceMap;
-use SengentoBV\ChronopostSdk\Shipment\DpdBeApiShipmentClassMap;
-use SengentoBV\ChronopostSdk\Exceptions\DpdBeFaultHandler;
 use SengentoBV\ChronopostSdk\Soap\QuickCostService\ChronoQuickCostApiClassMap;
 use SengentoBV\ChronopostSdk\Soap\RelayPointService\ChronoRelayPointApiClassMap;
 use SengentoBV\ChronopostSdk\Soap\ShippingService\ChronoShippingApiClassMap;
@@ -43,8 +30,6 @@ class ChronoApiClient
     private ChronoFaultHandler $faultHandler;
 
     private ?ChronoAuthenticationInterface $authentication;
-
-    private bool $testMode = false;
 
     private array $soapServiceClients = [];
 
