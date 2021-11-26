@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+printf "Generating ShippingService files\n"
+wsdltophp generate:package \
+--urlorpath="https://ws.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl" \
+--destination="./build" \
+--composer-name="sengentobv/chronopost-sdk" \
+--namespace="SengentoBV\\ChronopostSdk\\Soap\\ShippingService" \
+--prefix="ChronoApi" \
+--structs-folder="Structs" \
+--arrays-folder="Arrays" \
+--enums-folder="Enums" \
+--services-folder="Services" \
+--force
+
+printf "Generating TrackingService files\n"
+wsdltophp generate:package \
+--urlorpath="https://ws.chronopost.fr/tracking-cxf/TrackingServiceWS?wsdl" \
+--destination="./build" \
+--composer-name="sengentobv/chronopost-sdk" \
+--namespace="SengentoBV\\ChronopostSdk\\Soap\\TrackingService" \
+--prefix="ChronoApi" \
+--structs-folder="Structs" \
+--arrays-folder="Arrays" \
+--enums-folder="Enums" \
+--services-folder="Services" \
+--force
+
+printf "Generating SlotGeoService files\n"
+wsdltophp generate:package \
+--urlorpath="https://ws.chronopost.fr/rdv-cxf/services/CreneauServiceWS?wsdl" \
+--destination="./build" \
+--composer-name="sengentobv/chronopost-sdk" \
+--namespace="SengentoBV\\ChronopostSdk\\Soap\\SlotGeoService" \
+--prefix="ChronoApi" \
+--structs-folder="Structs" \
+--arrays-folder="Arrays" \
+--enums-folder="Enums" \
+--services-folder="Services" \
+--force
+
+printf "Generating RelayPointService files\n"
+wsdltophp generate:package \
+--urlorpath="https://ws.chronopost.fr/recherchebt-ws-cxf/PointRelaisServiceWS?wsdl" \
+--destination="./build" \
+--composer-name="sengentobv/chronopost-sdk" \
+--namespace="SengentoBV\\ChronopostSdk\\Soap\\RelayPointService" \
+--prefix="ChronoApi" \
+--structs-folder="Structs" \
+--arrays-folder="Arrays" \
+--enums-folder="Enums" \
+--services-folder="Services" \
+--force
+
+printf "Generating QuickCostService files\n"
+wsdltophp generate:package \
+--urlorpath="https://ws.chronopost.fr/quickcost-cxf/QuickcostServiceWS?wsdl" \
+--destination="./build" \
+--composer-name="sengentobv/chronopost-sdk" \
+--namespace="SengentoBV\\ChronopostSdk\\Soap\\QuickCostService" \
+--prefix="ChronoApi" \
+--structs-folder="Structs" \
+--arrays-folder="Arrays" \
+--enums-folder="Enums" \
+--services-folder="Services" \
+--force
