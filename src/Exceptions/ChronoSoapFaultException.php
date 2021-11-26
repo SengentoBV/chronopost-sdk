@@ -22,8 +22,14 @@ class ChronoSoapFaultException extends ChronoException
 
         // Special case for error responses
         if (isset($soapFault->faultcode) && isset($soapFault->faultstring)) {
-            $message = $soapFault->faultstring;
-            $code = strpos($soapFault->faultstring , 'CHRONO_ERR' ) === 0 ? intval(substr($soapFault->faultstring, strlen('CHRONO_ERR'))) : 0;
+
+            if ($soapFault->faultcode === 'INTERNAL_AUTHENTICATION_NOT_SET') {
+                $message = 'Authentication not set.';
+                $code = -1;
+            } else {
+                $message = $soapFault->faultstring;
+                $code = strpos($soapFault->faultcode , 'CHRONO_ERR' ) === 0 ? intval(substr($soapFault->faultcode, strlen('CHRONO_ERR'))) : 0;
+            }
         }
 
         parent::__construct($message, $code, $soapFault);
