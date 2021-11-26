@@ -51,9 +51,9 @@ class ChronoApiClient
      *                                         [default: dummy handler]
      * @throws ChronoException Throws if the any of the keys of the $wsdlOptions array is not a valid service type.
      */
-    public function __construct(array                         $wsdlOptions = null,
-                                ?ChronoAuthenticationInterface $authentication = null,
-                                ?ChronoFaultHandler            $faultHandler = null)
+    public function __construct(?ChronoAuthenticationInterface $authentication = null,
+                                ?ChronoFaultHandler            $faultHandler = null,
+                                array                          $wsdlOptions = null)
     {
         if ($wsdlOptions !== null && count($wsdlOptions) > 0) {
             foreach ($wsdlOptions as $serviceType => $wsdlOptionsArray) {
