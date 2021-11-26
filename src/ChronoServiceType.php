@@ -32,7 +32,7 @@ class ChronoServiceType
     /**
      * Check if the given string is a valid service type identifier. Case-sensitive.
      * @param string $serviceType Service type identifier.
-     * @throws ChronoException
+     * @throws ChronoArgumentOutOfRangeException
      */
     public static function requireValid(string $serviceType)
     {

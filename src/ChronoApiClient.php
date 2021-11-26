@@ -2,6 +2,7 @@
 
 namespace SengentoBV\ChronopostSdk;
 
+use SengentoBV\ChronopostSdk\Exceptions\ChronoArgumentOutOfRangeException;
 use SengentoBV\ChronopostSdk\Exceptions\ChronoException;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoQuickCostServiceClient;
 use SengentoBV\ChronopostSdk\ServiceClients\ChronoRelayPointServiceClient;
@@ -134,7 +135,7 @@ class ChronoApiClient
      * Get the WSDL options for the given service type after having applied the optional overrides.
      * @param string $serviceType Valid service type. See {@see DpdBeShipperServiceType}
      * @return array
-     * @throws Exceptions\ChronoException Throws if the service type isn't valid.
+     * @throws Exceptions\ChronoArgumentOutOfRangeException Throws if the service type isn't valid.
      */
     public function getWsdlOptions(string $serviceType): array
     {
