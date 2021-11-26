@@ -1,6 +1,6 @@
 {
   "name": "sengentobv/chronopost-sdk",
-  "description": "sengentobv/chronopost-sdk",
+  "description": "Unofficial Chronopost API PHP SDK",
   "license": "MIT",
   "require": {
     "php": "^7.4||^8.0",

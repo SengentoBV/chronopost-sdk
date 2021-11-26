@@ -13,10 +13,7 @@ $password = $_ENV['CHRONO_API_PASSWORD'] ?? '';
 
 $authentication = new \SengentoBV\ChronopostSdk\ChronoAuthentication($accountNumber, $password);
 
-$apiClient = new ChronoApiClient(null, $authentication);
-
-//$apiClient->setTestMode(true);
-///$apiClient->setFaultHandler(...);
+$apiClient = new \SengentoBV\ChronopostSdk\ChronoApiClient($authentication);
 
 try {
     $response = $apiClient->getQuickCostService()->quickCost(new \SengentoBV\ChronopostSdk\Soap\QuickCostService\Structs\ChronoApiQuickCost(
